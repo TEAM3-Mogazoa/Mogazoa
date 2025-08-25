@@ -11,23 +11,20 @@ import AvatarProfile from './AvatarProfile';
 // import { useAuthStore } from '@/store/auth'; -> 유저 정보 제작 후 교체
 
 interface AuthState {
-  isLoggedIn: boolean;
   name?: string | null;
   profileUrl?: string | null;
 }
 
 function useAuth(): AuthState {
-  // const isLoggedIn = useAuthStore((s) => Boolean(s.session));
   // const name = useAuthStore((s) => s.user?.name ?? null);
   // const profileUrl = useAuthStore((s) => s.user?.profileImg ?? null);
-  // return { isLoggedIn, name, profileUrl };
+  // return { name, profileUrl };
 
-  return { isLoggedIn: false, name: null, profileUrl: null }; // 임시 더미데이터
+  return { name: null, profileUrl: null }; // 임시 더미데이터
 }
-
 const ProfileDropdown = () => {
   const [listOpen, setListOpen] = useState(false);
-  const { isLoggedIn, name, profileUrl } = useAuth();
+  const { name, profileUrl } = useAuth();
   const ref = useRef<HTMLDivElement | null>(null);
 
   // 린트 에러 방지
@@ -58,32 +55,15 @@ const ProfileDropdown = () => {
           className='border-black-353542 bg-black-252530 absolute top-13 left-0 z-10 w-36 rounded-lg border px-2 py-2 xl:right-[120px]'
         >
           <ul>
-            {isLoggedIn ? (
-              <div>
-                <li className='hover:bg-black-353542 text-white-f1f1f5 rounded-lg px-2 py-1'>
-                  <Link href='/mypage' onClick={() => setListOpen(false)}>
-                    내 프로필
-                  </Link>
-                </li>
-                <li className='hover:bg-black-353542 text-white-f1f1f5 rounded-lg px-2 py-1'>
-                  <button onClick={() => setListOpen(false)}>로그아웃</button>
-                  {/* <button onClick={()=> signOut()}>로그아웃</button> -> auth 세팅 이후 사용 */}
-                </li>
-              </div>
-            ) : (
-              <div>
-                <li className='hover:bg-black-353542 text-white-f1f1f5 rounded-lg px-2 py-1'>
-                  <Link href='/signin' onClick={() => setListOpen(false)}>
-                    로그인
-                  </Link>
-                </li>
-                <li className='hover:bg-black-353542 text-white-f1f1f5 rounded-lg px-2 py-1'>
-                  <Link href='/signup' onClick={() => setListOpen(false)}>
-                    회원가입
-                  </Link>
-                </li>
-              </div>
-            )}
+            <li className='hover:bg-black-353542 text-white-f1f1f5 rounded-lg px-2 py-1'>
+              <Link href='/mypage' onClick={() => setListOpen(false)}>
+                내 프로필
+              </Link>
+            </li>
+            <li className='hover:bg-black-353542 text-white-f1f1f5 rounded-lg px-2 py-1'>
+              <button onClick={() => setListOpen(false)}>로그아웃</button>
+              {/* <button onClick={()=> signOut()}>로그아웃</button> -> auth 세팅 이후 사용 */}
+            </li>
           </ul>
         </div>
       )}
