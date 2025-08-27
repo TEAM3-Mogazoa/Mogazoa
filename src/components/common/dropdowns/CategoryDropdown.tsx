@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import DropdownIcon from '@/../public/icon/Icon-dropdown.svg';
-import DropupIcon from '@/../public/icon/Icon-dropup.svg';
+import DropdownIcon from '@/assets/icon/Icon-dropdown.svg';
+import DropupIcon from '@/assets/icon/Icon-dropup.svg';
 import { Category, CATEGORY } from '@/constants/ProductsConst';
 import useDropdown from '@/hooks/useDropdown';
 import { cn } from '@/lib/utils';
@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 export const CategoryDropdown = ({ onChange }: { onChange?: (id: number) => void }) => {
   // onChange = 프롭을 number로 받는 함수
   const [value, setValue] = useState<string | null>(null);
-  const { isOpen, toggleDropdown, dropdownRef: dropdwonRef } = useDropdown();
+  const { isOpen, toggleDropdown, dropdownRef } = useDropdown();
 
   const initialValue = value ? value : '카테고리 선택';
 
@@ -21,7 +21,7 @@ export const CategoryDropdown = ({ onChange }: { onChange?: (id: number) => void
   };
 
   return (
-    <div ref={dropdwonRef} className=''>
+    <div ref={dropdownRef} className=''>
       <div
         onClick={toggleDropdown}
         tabIndex={0}

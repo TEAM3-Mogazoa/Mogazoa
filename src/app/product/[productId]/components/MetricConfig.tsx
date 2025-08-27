@@ -1,9 +1,6 @@
-import FavoriteIcon20 from '@/../public/icon/Icon-favorite20.svg';
-import FavoriteIcon24 from '@/../public/icon/Icon-favorite24.svg';
-import ReviewIcon20 from '@/../public/icon/Icon-review20.svg';
-import ReviewIcon24 from '@/../public/icon/Icon-review24.svg';
-import StarIcon20 from '@/../public/icon/Icon-star20.svg';
-import StarIcon24 from '@/../public/icon/Icon-star24.svg';
+import FavoriteIcon from '@/assets/icon/Icon-favorite.svg';
+import ReviewIcon from '@/assets/icon/Icon-review.svg';
+import StarIcon from '@/assets/icon/Icon-star.svg';
 
 export const METRIC_CONFIG = {
   rating: {
@@ -11,24 +8,14 @@ export const METRIC_CONFIG = {
     unit: '점',
     isGreater: '더 높아요!',
     isSmaller: '더 낮아요!',
-    icon: (
-      <>
-        <StarIcon20 className='xl:hidden' />
-        <StarIcon24 className='hidden xl:block' />
-      </>
-    ),
+    icon: <StarIcon className='h-5 w-5 xl:h-6 xl:w-6' />,
   },
   favorite: {
     title: '찜',
     unit: '개',
     isGreater: '더 많아요!',
     isSmaller: '더 적어요!',
-    icon: (
-      <>
-        <FavoriteIcon20 className='xl:hidden' />
-        <FavoriteIcon24 className='hidden xl:block' />
-      </>
-    ),
+    icon: <FavoriteIcon className='h-5 w-5 xl:h-6 xl:w-6' />,
   },
   review: {
     title: '리뷰',
@@ -37,8 +24,7 @@ export const METRIC_CONFIG = {
     isSmaller: '더 적어요!',
     icon: (
       <>
-        <ReviewIcon20 className='xl:hidden' />
-        <ReviewIcon24 className='hidden xl:block' />
+        <ReviewIcon className='h-5 w-5 xl:h-6 xl:w-6' />
       </>
     ),
   },

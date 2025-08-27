@@ -1,7 +1,7 @@
 'use client';
 
-import ThumbsDownIcon from '@/../public/icon/Icon-thumbsdown.svg';
-import ThumbsUpIcon from '@/../public/icon/Icon-thumbsup.svg';
+import ThumbsDownIcon from '@/assets/icon/Icon-thumbsdown.svg';
+import ThumbsUpIcon from '@/assets/icon/Icon-thumbsup.svg';
 import useOptimisticToggle from '@/hooks/useOptimisticToggle';
 import { cn } from '@/lib/utils';
 import { ThumbChipProps } from '@/types/chips';
@@ -18,11 +18,15 @@ const ThumbChip = ({ initialCount, initialState, asyncAction }: ThumbChipProps) 
       type='button'
       onClick={handleToggle}
       className={cn(
-        'text-mogazoa-12px-400 xl:text-mogazoa-14px-400 border-black-353542 bg-black-252530 flex items-center justify-center gap-[5px] rounded-full border-[1px] px-[10px] py-[6px]',
+        'text-mogazoa-12px-400 xl:text-mogazoa-18px-400 border-black-353542 bg-black-252530 flex shrink-0 items-center justify-center gap-[5px] rounded-full border-[1px] px-[10px] py-[6px]',
         isToggled ? 'text-gradient' : 'text-gray-9fa6b2',
       )}
     >
-      {isToggled ? <ThumbsUpIcon /> : <ThumbsDownIcon />}
+      {isToggled ? (
+        <ThumbsUpIcon className='h-[18px] w-[18px] xl:h-[24px] xl:w-[24px]' />
+      ) : (
+        <ThumbsDownIcon className='h-[18px] w-[18px] xl:h-[24px] xl:w-[24px]' />
+      )}
       <p>{optimisticCount}</p>
     </button>
   );

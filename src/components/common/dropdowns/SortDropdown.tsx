@@ -2,8 +2,8 @@
 
 import { useMemo, useState } from 'react';
 
-import DropdownIcon from '@/../public/icon/Icon-dropdown.svg';
-import DropupIcon from '@/../public/icon/Icon-dropup.svg';
+import DropdownIcon from '@/assets/icon/Icon-dropdown.svg';
+import DropupIcon from '@/assets/icon/Icon-dropup.svg';
 import {
   Sort,
   SORT_OPTION_PRODUCTS,

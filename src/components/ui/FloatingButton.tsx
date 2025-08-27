@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 
-import AddIcon from '@/../public/icon/Icon-floating.svg';
+import AddIcon from '@/assets/icon/Icon-floating.svg';
 
 const handleClickModal = () => {
   return alert('product post modal');

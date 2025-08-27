@@ -1,9 +1,7 @@
 'use client';
 
-import KakaoIcon14 from '@/../public/icon/Icon-kakao14.svg';
-import KakaoIcon18 from '@/../public/icon/Icon-kakao18.svg';
-import ShareIcon14 from '@/../public/icon/Icon-share14.svg';
-import ShareIcon18 from '@/../public/icon/Icon-share18.svg';
+import KakaoIcon from '@/assets/icon/Icon-kakao.svg';
+import ShareIcon from '@/assets/icon/Icon-share.svg';
 import { cn } from '@/lib/utils';
 
 const ShareButton = ({ variant }: { variant: 'primary' | 'kakao' }) => {
@@ -17,15 +15,9 @@ const ShareButton = ({ variant }: { variant: 'primary' | 'kakao' }) => {
       )}
     >
       {variant === 'primary' ? (
-        <>
-          <ShareIcon14 className='xl:hidden' />
-          <ShareIcon18 className='hidden xl:block' />
-        </>
+        <ShareIcon className='h-[14px] w-[14px] xl:h-[18px] xl:w-[18px]' />
       ) : (
-        <>
-          <KakaoIcon14 className='xl:hidden' />
-          <KakaoIcon18 className='hidden xl:block' />
-        </>
+        <KakaoIcon className='h-[14px] w-[14px] xl:h-[18px] xl:w-[18px]' />
       )}
     </button>
   );

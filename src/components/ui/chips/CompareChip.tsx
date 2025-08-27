@@ -1,6 +1,6 @@
 'use client';
 
-import DeleteIcon from '@/../public/icon/Icon-delete.svg';
+import DeleteIcon from '@/assets/icon/Icon-delete.svg';
 import { cn } from '@/lib/utils';
 import { CompareChipProps } from '@/types/chips';
 
@@ -21,7 +21,7 @@ const CompareChip = ({ variant, productName, onClick }: CompareChipProps) => {
           'transition-colors duration-200 group-hover:scale-110',
         )}
       >
-        <DeleteIcon />
+        <DeleteIcon className='h-[13px] w-[13px] xl:h-[15px] xl:w-[15px]' />
       </button>
     </div>
   );

@@ -1,4 +1,4 @@
-import CategoryIcon from '@/../public/icon/Icon-category.svg';
+import CategoryIcon from '@/assets/icon/Icon-category.svg';
 import { cn } from '@/lib/utils';
 import { CategoryFilterChipProps } from '@/types/chips';
 
@@ -11,7 +11,7 @@ const CategoryFilterChip = ({ name, className, onClick }: CategoryFilterChipProp
       )}
       onClick={onClick}
     >
-      <CategoryIcon />
+      <CategoryIcon className='h-[18px] w-[18px]' />
       {name}
     </button>
   );
